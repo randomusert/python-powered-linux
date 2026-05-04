@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "Welcome to the Python Powered Linux distro!"
+python /bin/init/init.py
+
+echo "If you see this message, it means that the kernel is going to kernel panic since the script has died and if the pid 0 process dies the kernel will panic"
