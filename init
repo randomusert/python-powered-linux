@@ -9,7 +9,7 @@ echo "Welcome to the Python Powered Linux distro!"
 export PYTHONPATH=/usr/bin
 
 while true; do
-    /usr/bin/python3 /bin/userspace-v1/init/init.py
+    /usr/bin/python3 /bin/userspace_v1/init/init.py
     echo "Python exited! Restarting..."
     sleep 1
 done
