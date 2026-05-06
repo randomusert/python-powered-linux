@@ -5,6 +5,13 @@ mount -t sysfs none /sys
 mount -t devtmpfs none /dev
 
 echo "Welcome to the Python Powered Linux distro!"
-exec /bin/python3 /usr/bin/userspace-v1/init/init.py
 
-echo "If you see this message, it means that the kernel is going to kernel panic since the script has died and if the pid 0 process dies the kernel will panic"
+export PYTHONPATH=/usr/bin
+
+while true; do
+    /usr/bin/python3 /bin/userspace-v1/init/init.py
+    echo "Python exited! Restarting..."
+    sleep 1
+done
+
+echo "If you see this message, it means that the kernel is going to kernel panic since the script has died and if the pid 0 process dies the kernel will panic. This should never happen since the script is designed to run indefinitely, but if it does, it indicates a critical failure in the system. Please check the logs and investigate the cause of the failure."
