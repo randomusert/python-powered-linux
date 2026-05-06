@@ -1,4 +1,4 @@
-from ..main import main
+from userspace_v1.main import main
 
 def init():
     print("Loading Linux 7.1-rc2 distro powered by python")
