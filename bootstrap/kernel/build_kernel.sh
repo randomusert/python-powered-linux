@@ -1,7 +1,7 @@
 set -e
 echo "Starting kernel build process"
 
-export LINUX_SOURCE_DIR=$(pwd)/../linux-7.1-rc2
+export LINUX_SOURCE_DIR=$(pwd)/../linux-7.1-rc5
 
 if [ ! -d "$LINUX_SOURCE_DIR" ]; then
     echo "Kernel source directory not found. Please run fetch_kernel.sh first or check the directory path."
