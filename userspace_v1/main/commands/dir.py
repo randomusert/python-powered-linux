@@ -8,7 +8,8 @@ class DirCommand:
         try:
             files = os.listdir(self.path)
             for file in files:
-                print(file)
+                print(file, end='  ')
+            print()  # Print a newline at the end
         except FileNotFoundError:
             print(f"Directory '{self.path}' not found.")
         except PermissionError:
