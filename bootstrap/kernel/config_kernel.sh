@@ -2,7 +2,7 @@ set -e
 
 echo "Starting Kernel configuration process"
 
-cd linux-7.1-rc5
+cd linux-7.3-rc2
 
 echo "Configuring the kernel with default settings"
 
