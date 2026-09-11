@@ -9,7 +9,7 @@ class VerCommand(BaseCommands):
     def execute(self):
 
         runningOs = platform.system()
-        if(runningOs != "linux"):
+        if(runningOs != "Linux"):
             print("This program is designed to run on Linux. You are running on " + runningOs)
             print("Please switch to a Linux environment to use this program.")
             return
