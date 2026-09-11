@@ -5,11 +5,14 @@ set -o pipefail
 
 build_rootfs() {
     if [ ! -d "$TINOSPPLE_ROOTFS" ]; then
-        echo -e "Error: TINOSPPLE_ROOTFS directory does not exist or the variable is not set as a argument. Please do buildRootFS.sh $TINOSPPLE_ROOTFS=/path/to/tinospple_rootfs"
+        echo "Error: TINOSPPLE_ROOTFS directory does not exist or the variable is not set."
         exit 1
     fi
 
-    find $TINOSPPLE_ROOTFS -print0 | cpio --null -ov --format=newc | gzip -9 > "$HOME/tinospple_initrd.img"
+    (
+        cd "$TINOSPPLE_ROOTFS"
+        find . -print0 | cpio --null -ov --format=newc
+    ) | gzip -9 > "$HOME/tinospple_initrd.img"
 }
 
 while getopts "r:" opt; do
