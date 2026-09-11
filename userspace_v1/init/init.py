@@ -1,7 +1,7 @@
 import time
 
 from userspace_v1.main import main
-from userspace_v1.main.commands import dir
+from userspace_v1.main.commands.coreutils import dir
 
 
 def init():
@@ -42,6 +42,18 @@ def init():
         elif command == "ver":
             from userspace_v1.main.commands import ver
             ver.VerCommand(args).execute()
+
+        elif command == "mkdir":
+            from userspace_v1.main.commands.coreutils import mkdir
+            mkdir.MkdirCommand(args).execute()
+
+        elif command == "md":
+            from userspace_v1.main.commands.coreutils import mkdir
+            mkdir.MkdirCommand(args).execute()
+
+        elif command == "exec":
+            from userspace_v1.main.commands import exec
+            exec.ExecCommand(args).execute()
 
         else:
             print(f"Unknown command: {command}. Type 'help' for a list of commands.")
